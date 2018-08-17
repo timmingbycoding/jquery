@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			console.log($("span"));
+			$("span").click(function(){
+				$(this).next().slideDown(100).parent().siblings().children("img").slideUp(100);/*出线传值错误*/ 
+			});
+		});
+	</script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+			text-align: center;
+		}
+		ul li{
+			border:1px solid blue;
+			background-color: deepskyblue;
+		}
+		.dv{
+			width: 300px;
+			margin: 100px auto;
+		}
+		span {
+			width: 298px;
+			height: 30px;
+			line-height: 30px;
+		}
+		img{
+			display: none;
+			vertical-align: top;
+			width: 300px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="dv">
+		<ul>
+				<li>
+					<span id="title">标题一</span>
+					<img src="img/in1.jpg" alt="火影忍者" />
+				</li>
+				<li>
+					<span id="title">标题二</span>
+					<img src="img/in2.jpg" alt="火影忍者" />
+				</li>
+				<li>
+					<span id="title">标题三</span>
+					<img src="img/in3.jpg" alt="火影忍者" />
+				</li>
+				<li>
+					<span id="title">标题四</span>
+					<img src="img/in4.jpg" alt="火影忍者" />
+				</li>
+				<li>
+					<span id="title">标题五</span>
+					<img src="img/in5.jpg" alt="火影忍者" />
+				</li>
+			</ul>	
+	</div>
+</body>
+</html>

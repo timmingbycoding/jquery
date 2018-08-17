@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的天啊</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style></style>
+    <script>
+        $(function () {
+            // console.log("haha");
+            // alert("你好我是jquery!");
+            // console.dir($);
+            //jquery JavaScript库 是一个js工具
+            /**
+             * 找对象
+             * 1、标签
+             * 2、类选择器
+             * 3、id选择器
+             * 4、后代选择器
+             * 5子代选择器
+             *
+             * **/
+            for(var i=0;i<$("li").length;i++){
+                $("li:even").css("backgroundColor","red");
+                $("li:odd").css("backgroundColor","blue");
+                $("li").css("listStyle","none");
+            }
+        });
+    </script>
+
+
+
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>这是一个li标签</li>
+        <li>这是一个li标签</li>
+        <li>这是一个li标签</li>
+        <li>这是一个li标签</li>
+        <li>这是一个li标签</li>
+        <li>这是一个li标签</li>
+    </ul>
+    <img src="img/abg.gif " alt=" 一个北京">
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #666;
+		}
+		img{
+			display: block;
+			float: left;
+			vertical-align: top;
+			width: 400px;
+			margin-right: 0px;
+		}
+		.dv{
+			background-color: #fff;
+			width: 1200px;
+			padding:10px;
+			border:1px solid gray;
+			margin: 100px auto;
+		}
+		.dv:before,.dv:after{
+			display: table;
+			content:"";
+		}
+		.dv:after{
+			clear: both;
+		}
+	</style>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+			$(".dv>img").mouseenter(function(){
+				$(this).css("opacity",1).siblings().css("opacity",.4);
+			});
+			$(".dv").mouseleave(function(){
+				$(this).find("img").css("opacity",1);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="dv">
+		<img src="img/in1.jpg" alt="火影忍者" />
+		<img src="img/in2.jpg" alt="火影忍者" />
+		<img src="img/in3.jpg" alt="火影忍者" />
+		<img src="img/in4.jpg" alt="火影忍者" />
+		<img src="img/in5.jpg" alt="火影忍者" />
+		<img src="img/in6.jpg" alt="火影忍者" />
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+    line-height: 26px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+.show{
+    width: 300px;
+    margin: 100px auto;
+    overflow: hidden;
+    background-color: indianred;
+}
+#left li,#right li{
+    border:1px solid blueviolet;
+}
+#left li:hover,#right li:hover{
+    background: url("../img/bg.jpg") repeat-x;
+}
+.show:before,.show:after{
+    display: table;
+    content:"";
+}
+.show:after{
+    clear: both;
+}
+#left,#center,#right{
+    float: left;
+}
+#left,#right{
+    width: 50px;
+}
+#center{
+    width: 200px;
+   height: 250px;
+    overflow: hidden;
+}
