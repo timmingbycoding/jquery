@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $("#dv1").text("<h1>这是text方法</h1>");
+      $("#dv2").html("<h1>这是html方法</h1>");
+    });
+    /**
+     *html 方法与text方法不一样
+     * 区别在于html遇到标签会有语义化处理
+     * 而text遇到标签会转特殊符号处理是页面出现的和text内的一模一样
+     **/
+  </script>
+</head>
+<body>
+  <div id="dv1"></div>
+  <div id="dv2"></div>
+</body>
+</html>

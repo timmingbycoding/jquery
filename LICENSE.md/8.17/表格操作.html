@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <style>
+    #dv{
+      width: 400px;
+      margin: 100px auto;
+    }
+  </style>
+  <script>
+    $(function(){
+      $("#btn1").on("click",function(){
+        $("#t_bd").empty();
+      });
+      $("#t_bd").on("click",".gitb",function(){
+        $(this).parent().parent().remove();
+      });
+      $("#btn2").on("click",function(){
+        $("<tr>\n" +
+          "        <td>数学</td>\n" +
+          "        <td>数学科学学院</td>\n" +
+          "        <td><a href=\"javascript:;\" class=\"gitb\">删除</a></td>\n" +
+          "      </tr>").appendTo("#t_bd");
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="dv">
+    <input type="button" value="清空" id="btn1" />
+    <input type="button" value="添加" id="btn2" />
+    <table id="t_ab">
+      <thead>
+        <tr>
+          <th>课程名</th>
+          <th>学院</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="t_bd">
+      <tr>
+        <td>java</td>
+        <td>计算机科学院</td>
+        <td><a href="javascript:;" class="gitb">删除</a></td>
+      </tr>
+      <tr>
+        <td>统计学</td>
+        <td>数学应用学院</td>
+        <td><a href="javascript:;" class="gitb">删除</a></td>
+      </tr>
+      <tr>
+        <td>经济学</td>
+        <td>国际金融学学院</td>
+        <td><a href="javascript:;" class="gitb">删除</a></td>
+      </tr>
+      <tr>
+        <td>足球</td>
+        <td>体育学院</td>
+        <td><a href="javascript:;" class="gitb">删除</a></td>
+      </tr>
+      <tr>
+        <td>javascript</td>
+        <td>信息管理与信息系统学院</td>
+        <td><a href="javascript:;" class="gitb">删除</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

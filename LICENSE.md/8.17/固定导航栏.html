@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div{
+      margin: center;
+      /*margin: 0 auto;*/
+      /*position: ;*/
+    }
+    .fixed{
+      position: fixed;
+      top: 0;
+    }
+    #main img{
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      console.log($("#top").height());
+      $(window).scroll(function(){
+        if($(window).scrollTop()>=$("#top").height()){
+          $("#nav").addClass("fixed");
+          $("#main").css("marginTop",$("#nav").height()+10);
+        }else{
+          $("#nav").removeClass("fixed")
+          $("#main").css("marginTop",0);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="top">
+    <img src="img/top.png" height="168" width="1423"/>
+  </div>
+  <div id="nav">
+    <img src="img/nav.png" height="83" width="1423"/>
+  </div>
+  <div id="main">
+    <img src="img/main.png" height="2734" width="1001"/></div>
+</body>
+</html>

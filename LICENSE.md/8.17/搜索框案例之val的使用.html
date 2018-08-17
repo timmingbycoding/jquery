@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <style>
+    #tet{
+      width: 300px;
+      height: 40px;
+      line-height: 40px;
+      margin: 100px auto;
+      display:block;
+    }
+  </style>
+  <script>
+    $(function(){
+      // $("#tet").focus(function(){
+      //  if($(this).val()==="方翔"){
+      //    $(this).val("");
+      //  }
+      // });
+      // $("#tet").blur(function(){
+      //   if($(this).val()===""){
+      //     $(this).val("方翔");
+      //   }
+      // });
+      $("#tet").on("focus",function(){
+        if($(this).val()=="方翔"){
+          $(this).val("");
+        }
+      });
+      $("#tet").on("blur",function(){
+        if($(this).val()==""){
+          $(this).val("方翔");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<input type="text" id="tet" value="方翔" />
+</body>
+</html>

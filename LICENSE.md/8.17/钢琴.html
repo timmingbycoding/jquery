@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    /**
+     * 该文件在谷歌打开中有部分音乐放不出，在360浏览器音频没问题
+     * */
+  </script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .piano{
+      width: 810px;
+      height: 50px;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+    ul{
+      list-style: none;
+
+    }
+    li{
+      float: left;
+      width: 90px;
+      height: 50px;
+      line-height: 50px;
+      position: relative;
+      text-align: center;
+      background-color: #000;
+    }
+    a{
+      position: absolute;
+      left: 0;
+      width: 90px;
+      height: 50px;
+      font-size: 20px;
+      color: #eee;
+      /*text-align: center;*/
+      line-height: 50px;
+      text-decoration: none;
+      z-index: 2;
+    }
+    span{
+      width: 90px;
+      height: 50px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background-color: yellowgreen;
+    }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script>
+    $(function(){
+      $(".piano li").mouseenter(function(){
+        $(this).children("span").stop().animate({top:0});
+        $("audio").get($(this).index()).load();
+        $("audio").get($(this).index()).play();
+      }).mouseleave(function(){
+        $(this).children("span").stop().animate({top:50});
+      });
+
+      var flag = true;
+
+
+      //按下1-9这几个数字键，能触发对应的mouseenter事件
+      $(document).on("keydown", function (e) {
+        if(flag) {
+          flag = false;
+          //获取到按下的键
+          var code = e.keyCode;
+          if(code >= 49 && code <= 57){
+            //触发对应的li的mouseenter事件
+            $(".piano li").eq(code - 49).mouseenter();
+          }
+        }
+
+      });
+
+      $(document).on("keyup", function (e) {
+        flag = true;
+
+        //获取到按下的键
+        var code = e.keyCode;
+        if(code >= 49 && code <= 57){
+          //触发对应的li的mouseenter事件
+          $(".piano li").eq(code - 49).mouseleave();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="piano">
+    <ul>
+      <li>
+        <a href="javascript:;">数学</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">语文</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">英语</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">物理</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">化学</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">生物</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">历史</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">地理</a>
+        <span></span>
+      </li>
+      <li>
+        <a href="javascript:;">政治</a>
+        <span></span>
+      </li>
+
+    </ul>
+  </div>
+  <div id="audio">
+    <audio src="mp3/1.ogg"></audio>
+    <audio src="mp3/2.ogg"></audio>
+    <audio src="mp3/3.ogg"></audio>
+    <audio src="mp3/4.ogg"></audio>
+    <audio src="mp3/5.ogg"></audio>
+    <audio src="mp3/6.ogg"></audio>
+    <audio src="mp3/7.ogg"></audio>
+    <audio src="mp3/8.ogg"></audio>
+    <audio src="mp3/9.ogg"></audio>
+
+  </div>
+</body>
+</html>

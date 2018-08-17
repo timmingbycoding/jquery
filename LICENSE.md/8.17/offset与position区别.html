@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script>
+    /**
+     * offset与position
+     * 联系：两者都是获得一个返回对象，改对象都包含top与left属性
+     * offset获取的值相对于document或者说相对于body得出
+     * 而 position则是相对于父级元素而言；
+     * */
+  </script>
+  <style>
+    #father{
+      margin-top: 100px;
+      margin-left: 100px;
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background-color: darkred;
+    }
+    #son{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 200px;
+      left: 200px;
+      background-color: darkgoldenrod;
+    }
+  </style>
+  <script>
+    $(function(){
+      console.log($("#son").offset());
+      console.log($("#son").position());
+    });
+    /**
+     * 当#son元素脱标，但是#father未设置relative时
+     * 他的position（）获得的内容会以body为参照
+     * */
+  </script>
+</head>
+<body>
+  <div id="father">
+    <div id="son"></div>
+  </div>
+</body>
+</html>

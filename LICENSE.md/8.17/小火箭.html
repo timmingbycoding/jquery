@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <style>
+    body{
+      height: 4000px;
+    }
+    div{
+      position: fixed;
+      width: 150px;
+      height: 195px;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      /*background-color: deeppink;*/
+    }
+    a{
+      display: block;
+      width: 150px;
+      height: 195px;
+      background: url("img/gotop.png") no-repeat;
+    }
+    a:hover{
+      background: url("img/gotop.gif") no-repeat;
+    }
+  </style>
+  <script>
+    $(function(){
+      $(window).scroll(function(){
+        if($(window).scrollTop()>=900){
+          // console.log($("div>a"));
+          $("div").fadeIn();
+        }else{
+          $("div").fadeOut();
+        }
+      });
+      $("#aline").on("click",function(){
+        console.log($("#aline"));
+        $("html,body").animate({scrollTop:0},2000);
+        // return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <div><a id="aline" href="javascript:void (0);"></a> </div>
+</body>
+</html>

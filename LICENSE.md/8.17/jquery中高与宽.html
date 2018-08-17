@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #dv{
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      margin: 10px;
+      background-color: plum;
+    }
+  </style>
+  <script>
+    $(function(){
+      console.log($("#dv").height());
+      console.log($("#dv").width());
+      console.log($("#dv").innerHeight());
+      console.log($("#dv").innerWidth());
+      console.log($("#dv").outerHeight());
+      console.log($("#dv").outerWidth());
+      console.log($("#dv").outerHeight(true));
+      console.log($("#dv").outerWidth(true));
+      $("#dv").on("click",function(){
+        $("#dv").height(200);
+        $("#dv").width(200);
+        console.log($("#dv").height());
+        console.log($("#dv").width());
+        console.log($("#dv").innerHeight());
+        console.log($("#dv").innerWidth());
+        console.log($("#dv").outerHeight());
+        console.log($("#dv").outerWidth());
+        console.log($("#dv").outerHeight(true));
+        console.log($("#dv").outerWidth(true));
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="dv"></div>
+</body>
+</html>
