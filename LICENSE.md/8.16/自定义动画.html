@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+    <srcipt></srcipt>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+            position: absolute;
+        }
+    </style>
+  <script>
+    // $(function(){
+    //   $("#btn").click(function(){
+    //     // console.log($);
+    //     $("div").stop().animate({left:400}).stop().animate({top:300});
+    //   });
+    //
+    // });
+
+    /**
+     *这里出现一个问题
+     *  代吗有一部分未执行，在执行过程跳过了animate({left:400})
+     **/
+
+    $(function(){
+      $("#btn").click(function(){
+        // console.log($);
+        $("div").stop().animate({left:400}).animate({top:300});
+      });
+    });
+    /**
+    * 注释会引起错误吗？应该是某一位置书写错误导致的
+     * 可以确定上述错误是stop引起的额
+     * stop（）的默认方式应该是阻止当前动画快速执行后续动画
+     * 在上一例子中stop（）方法背写在两个animate（）之间所以前一个animate就无效了
+     * */
+  </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn" />
+  <div>
+
+  </div>
+</body>
+</html>

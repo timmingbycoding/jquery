@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>创建节点</title>
+		<script>
+			/*
+			 * append(0)
+			 *appendTo()
+			 * prepend()
+			 * prependTo()
+			 * selected
+			 * remove()
+			 * */
+		</script>
+		<script src="jquery-1.12.4.js"></script>
+		<style>
+			div{
+				width: 400px;
+				height: 400px;
+				background-color: lightpink;
+			}
+		</style>
+		<script>
+			$(function(){
+//				var a=document.createElement("a");
+//				var box=document.getElementsByTagName("div")[0];
+//				box.appendChild(a);
+//				a.attrib
+//				a.innerHTML="百度一下";
+				var $a=$("<a href='http://www.jd.com'>百度一下</a>");
+				var $p=$("<p >百度一下laingxai 大实话</p>");
+				
+				$("div").append($a);
+				$("div").prepend($p);
+				$("h1").prependTo($("div"));
+			});
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<h1>大家好</h1>
+	</body>
+</html>
