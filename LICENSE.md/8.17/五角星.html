@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <style>
+    ul{
+      list-style: none;
+      width: 500px;
+      margin-left: 100px;
+      /*margin:;*/
+    }
+    li{
+      font-size: 50px;
+      color:yellowgreen;
+      float: left;
+    }
+  </style>
+  <script>
+    $(function () {
+      // console.log("你好");
+      var wjx_k="☆";
+      var wjx_s="★";
+      $("li").mouseenter(function(){
+        // console.log($(this));
+        $(this).text(wjx_s).prevAll().text(wjx_s).end().nextAll().text(wjx_k);
+      });
+      $("ul").mouseleave(function () {
+        $("li").text(wjx_k);
+        $(".getclass").text(wjx_s).prevAll().text(wjx_s);
+      });
+      $("li").on("click",function(){
+        $(this).addClass("getclass").siblings().removeClass("getclass");
+      });
+    });
+  </script>
+</head>
+<body>
+<ul>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+</ul>
+</body>
+</html>

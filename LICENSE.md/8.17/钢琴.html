@@ -59,6 +59,7 @@
       $(".piano li").mouseenter(function(){
         $(this).children("span").stop().animate({top:0});
         $("audio").get($(this).index()).load();
+        // console.log($("audio").get(2));
         $("audio").get($(this).index()).play();
       }).mouseleave(function(){
         $(this).children("span").stop().animate({top:50});
